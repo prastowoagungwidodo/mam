@@ -1,3 +1,7 @@
+/**
+ * Index navigasi
+ * Semua navigasi berawal dari sini
+ */
 import { createStackNavigator, createAppContainer } from 'react-navigation';
 
 import Login from 'app/features/login/containers/LoginContainer';

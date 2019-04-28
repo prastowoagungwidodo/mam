@@ -1,3 +1,6 @@
+/**
+ * Style untuk GridView komponen
+ */
 import { StyleSheet } from 'react-native';
 import { Colors, DefaultTheme } from 'react-native-paper';
 

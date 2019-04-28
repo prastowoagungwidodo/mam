@@ -1,3 +1,8 @@
+/**
+ * Bottom Navigation
+ * atau navigasi bawah yang berupa ikon dan text dibawahnya
+ * ini digunakan sebagai navigasi utama pada halaman awal
+ */
 import React from 'react';
 import { DefaultTheme, Colors } from 'react-native-paper';
 import { createMaterialBottomTabNavigator } from 'react-navigation-material-bottom-tabs';

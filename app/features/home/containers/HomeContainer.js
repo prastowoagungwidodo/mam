@@ -1,3 +1,7 @@
+/**
+ * Ini merupakan halaman awal dari aplikasi
+ * yang menampilkan list resep
+ */
 import React, { Component } from 'react';
 import { View } from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
@@ -40,19 +44,40 @@ class HomeContainer extends Component {
       };
   };
 
+  /**
+   * Contoh data saja
+   * Mengambil resep-resep steak
+   */
+  componentDidMount(){
+      this.props.getLatest('steak');
+  }
+
+  /**
+   * View / Tampilan Home
+   */
   render() {
       return <HomeView {...this.props} />;
   }
 }
 
+/**
+ * Mengambil state dari redux
+ * @param {Object} state 
+ */
 const mapStateToProps = state => ({
     ...state.app
 });
 
+/**
+ * Mengambil action
+ */
 const mapDispatchToProps = {
     getLatest
 };
 
+/**
+ * Menghubungkan state dan action ke HomeComponent
+ */
 export default connect(
     mapStateToProps,
     mapDispatchToProps

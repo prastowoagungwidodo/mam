@@ -1,3 +1,6 @@
+/**
+ * GridView komponen ini digunakan untuk menampilkan daftar resep dihalaman awal.
+ */
 import React from 'react';
 import { TouchableOpacity, View, FlatList } from 'react-native';
 import { DefaultTheme, Title, Caption, TouchableRipple, Text } from 'react-native-paper';
@@ -8,7 +11,7 @@ import styles from './styles';
 const imgWidth = 100;
 const imgHeight = (imgWidth / 240) * 346;
 
-export default class BookList extends React.PureComponent {
+export default class GridView extends React.PureComponent {
     constructor(props) {
         super(props);
         this._navigate = this._navigate.bind(this);

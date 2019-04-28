@@ -1,8 +1,19 @@
+/**
+ * Actions disini merupakan kumpulan fungsi-fungsi yang digunakan untuk
+ * berkomunikasi dengan API Server
+ * action type harus sesuai dengan yang ada pada reducers untuk itu kita 
+ * gunakan konstanta yang disimpan pada file app/store/constants
+ */
 import Config from 'react-native-config';
 import {
     GET_LATEST,
 } from './constants';
 
+/**
+ * Mendapatkan resep-resep terbaru berdasarkan keyword tertentu
+ *  
+ * @param {String} keyword 
+ */
 export const getLatest = (keyword) => ({
     type: GET_LATEST,
     payload: {
