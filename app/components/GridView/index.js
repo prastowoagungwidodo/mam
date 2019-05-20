@@ -30,7 +30,7 @@ export default class GridView extends React.PureComponent {
             <TouchableOpacity
                 key={item.id}
                 style={styles.grid}
-                onPress={() => this._navigate('DETAIL_SCREEN', { book: item })}
+                onPress={() => this._navigate('Detail', { recipe: item.recipe })}
             >
                 <View style={styles.shadow}>
                     <FastImage

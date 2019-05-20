@@ -6,7 +6,7 @@ import React, { Component } from 'react';
 import { View } from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import { connect } from 'react-redux';
-import { getLatest } from '../../../store/actions';
+import { getLatest, getFeatured } from '../../../store/actions';
 import HomeView from './HomeView';
 import styles from './HomeStyles';
 import SearchBarComponent from '../components/SearchBar';
@@ -50,6 +50,7 @@ class HomeContainer extends Component {
    */
   componentDidMount(){
       this.props.getLatest('steak');
+      this.props.getFeatured('ayam');
   }
 
   /**
@@ -72,7 +73,8 @@ const mapStateToProps = state => ({
  * Mengambil action
  */
 const mapDispatchToProps = {
-    getLatest
+    getLatest,
+    getFeatured
 };
 
 /**

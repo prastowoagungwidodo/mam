@@ -5,10 +5,11 @@
  * Kendala React adalah state yang terisolasi sehingga tidak dapat berbagi state
  * Dengan menggunakan redux maka setiap komponen dapat berbagi state (data)
  * Aplikasi ini juga menggunakan redux-persist yang bermanfaat untuk menyimpan state
- * yang statis / digunakan sebagai cache agar aplikasi tidak melakukan request berkali-kali
+ * yang statis / digunakan sebagai cache agar aplikasi dapat menampilkan data meskipun request
+ * belum selesai
  * 
  * *    PersistGate merupakan provider dari redux-persist yang akan menampilkan <ActivityIndicator/>
- *      atau loading icon pada saat redux-persist melakukan pengecekan state dan meloadnya kedalam
+ *      atau loading icon pada saat redux-persist melakukan pengecekan state dan memuatnya kedalam
  *      state management (redux)
  * 
  * *    Store merupakan kumpulan state
@@ -53,10 +54,6 @@ const styles = StyleSheet.create({
     }
 });
 
-/**
- * Karena ini merupakan komponen sederhana dan tidak membutuhkan deteksi props 
- * maka kita gunakan PureComponent saja
- */
 export default class Entrypoint extends PureComponent {
     render() {
         return (

@@ -22,7 +22,7 @@ export default class HomeView extends PureComponent {
                     {...this.props}
                     title="Trending"
                     subtitle="Cobain resep yang lagi hits"
-                    data={this.props.latest}/>
+                    data={this.props.featured}/>
                 <GridView
                     {...this.props}
                     title="Terbaru"

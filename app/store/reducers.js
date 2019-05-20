@@ -11,6 +11,9 @@ import {
     GET_LATEST,
     GET_LATEST_FAIL,
     GET_LATEST_SUCCESS,
+    GET_FEATURED,
+    GET_FEATURED_FAIL,
+    GET_FEATURED_SUCCESS
 } from './constants';
 
 /**
@@ -24,6 +27,7 @@ const initialState = {
         photo: null
     },
     latest: [],
+    featured: [],
     loading: false,
 };
 
@@ -44,6 +48,23 @@ export default (state = initialState, action) => {
         };
     }
     case GET_LATEST_FAIL:
+        return {
+            ...state,
+            loading: false,
+            error: 'Galat! Gagal mengambil buku-buku terbaru'
+        };
+    case GET_FEATURED:
+        return { ...state, loading: true, error: null };
+
+    case GET_FEATURED_SUCCESS: {
+        return {
+            ...state,
+            featured: action.payload.data.hits,
+            loading: false,
+            error: null
+        };
+    }
+    case GET_FEATURED_FAIL:
         return {
             ...state,
             loading: false,
