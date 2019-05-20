@@ -1,6 +1,9 @@
 🚀 MAM - Aplikasi Resep Masak (React Native)
 ==========================================================
 
+![image](https://raw.githubusercontent.com/prastowoagungwidodo/mam/master/screenshot/2.png)
+![image](https://raw.githubusercontent.com/prastowoagungwidodo/mam/master/screenshot/1.png)
+
 ## Features
 
 * [Redux](http://redux.js.org/)
