@@ -12,6 +12,7 @@ import GridView from '../../../components/GridView';
 
 export default class HomeView extends PureComponent {
     render() {
+        console.log(this.props);
         return (
             <HomeScrollView>
                 <StatusBar backgroundColor="#fff" barStyle="dark-content" />
@@ -28,6 +29,16 @@ export default class HomeView extends PureComponent {
                     title="Terbaru"
                     subtitle="Cobain resep-resep terbaru"
                     data={this.props.latest}/>
+                <GridView
+                    {...this.props}
+                    title="Rendang"
+                    subtitle="Pernah ngerasain masakan terenak?"
+                    data={this.props.recipes['rendang'] || []}/>
+                <GridView
+                    {...this.props}
+                    title="Martabak"
+                    subtitle="Rasanya mungkin ngalahin Markobar"
+                    data={this.props.recipes['martabak'] || []}/>
             </HomeScrollView>
         );
     }

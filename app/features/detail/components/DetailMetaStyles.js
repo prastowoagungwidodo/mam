@@ -16,6 +16,9 @@ export default StyleSheet.create({
     },
     btn: {
         fontSize:24
+    },
+    caption: {
+        fontSize: 16
     }
 });
 

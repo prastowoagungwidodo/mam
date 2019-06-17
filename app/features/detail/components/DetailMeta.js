@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { View } from 'react-native';
-import { Text, Caption } from 'react-native-paper';
+import { Text, Title, Caption } from 'react-native-paper';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import styles from './DetailMetaStyles';
 import { colors } from 'app/config/themes';
@@ -41,20 +41,20 @@ export default class DetailMeta extends Component {
         return(
             <View style={styles.container}>
                 <View style={styles.item}>
-                    <Icon size={24} name="content-copy" color={colors.primary} />
-                    <Caption>
+                    <Title>Sajian</Title>
+                    <Caption style={styles.caption}>
                         {recipe.yield}
                     </Caption>
                 </View>
                 <View style={styles.item}>
-                    <Icon size={24} name="fire" color={colors.primary} />
-                    <Caption>
+                    <Title>Kalori</Title>
+                    <Caption style={styles.caption}>
                         {recipe.calories.toFixed(0) + " Cal"}
                     </Caption>
                 </View>
                 <View style={styles.item}>
-                    <Icon size={24} name="arrow-down-bold-box-outline" color={colors.primary} />
-                    <Caption>
+                    <Title>Berat</Title>
+                    <Caption style={styles.caption}>
                         {recipe.totalWeight.toFixed(0) + " gr"}
                     </Caption>
                 </View>

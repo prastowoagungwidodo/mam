@@ -13,7 +13,10 @@ import {
     GET_LATEST_SUCCESS,
     GET_FEATURED,
     GET_FEATURED_FAIL,
-    GET_FEATURED_SUCCESS
+    GET_FEATURED_SUCCESS,
+    GET_BYKEYWORD,
+    GET_BYKEYWORD_FAIL,
+    GET_BYKEYWORD_SUCCESS
 } from './constants';
 
 /**
@@ -29,6 +32,7 @@ const initialState = {
     latest: [],
     featured: [],
     loading: false,
+    recipes: {}
 };
 
 /**
@@ -51,7 +55,7 @@ export default (state = initialState, action) => {
         return {
             ...state,
             loading: false,
-            error: 'Galat! Gagal mengambil buku-buku terbaru'
+            error: 'Galat! Gagal mengambil data terbaru'
         };
     case GET_FEATURED:
         return { ...state, loading: true, error: null };
@@ -68,8 +72,29 @@ export default (state = initialState, action) => {
         return {
             ...state,
             loading: false,
-            error: 'Galat! Gagal mengambil buku-buku terbaru'
+            error: 'Galat! Gagal mengambil data terbaru'
         };
+    case GET_BYKEYWORD:
+        return {
+            ...state,
+            loading: true,
+            error: null
+        };
+    case GET_BYKEYWORD_FAIL:
+        return {
+            ...state,
+            loading: false,
+            error: 'Galat! Gagal mengambil data'
+        };
+    case GET_BYKEYWORD_SUCCESS: {
+        let recipes = state.recipes;
+        recipes[action.payload.config.params.q] = action.payload.data.hits;
+        return {
+            ...state,
+            loading: false,
+            recipes
+        };
+    }
     default:
         return state;
     }

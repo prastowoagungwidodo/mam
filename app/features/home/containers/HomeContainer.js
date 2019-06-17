@@ -6,7 +6,7 @@ import React, { Component } from 'react';
 import { View } from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import { connect } from 'react-redux';
-import { getLatest, getFeatured } from '../../../store/actions';
+import { getLatest, getFeatured, getByKeyword } from '../../../store/actions';
 import HomeView from './HomeView';
 import styles from './HomeStyles';
 import SearchBarComponent from '../components/SearchBar';
@@ -51,6 +51,8 @@ class HomeContainer extends Component {
   componentDidMount(){
       this.props.getLatest('steak');
       this.props.getFeatured('ayam');
+      this.props.getByKeyword('martabak');
+      this.props.getByKeyword('rendang');
   }
 
   /**
@@ -74,7 +76,8 @@ const mapStateToProps = state => ({
  */
 const mapDispatchToProps = {
     getLatest,
-    getFeatured
+    getFeatured,
+    getByKeyword
 };
 
 /**
